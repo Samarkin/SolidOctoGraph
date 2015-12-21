@@ -2,6 +2,9 @@ import Cocoa
 
 class ViewController: NSViewController {
 
+    @IBOutlet var textField: NSTextField!
+    @IBOutlet var graphView: OctoGraphView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -12,6 +15,9 @@ class ViewController: NSViewController {
         didSet {
             // Update the view, if already loaded.
         }
+    }
+
+    @IBAction func connectClick(sender: AnyObject) {
     }
 
 }

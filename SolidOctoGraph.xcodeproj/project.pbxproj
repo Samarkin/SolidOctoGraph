@@ -13,6 +13,8 @@
 		A6E5A15A1C2754DD006CC86E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6E5A1581C2754DD006CC86E /* Main.storyboard */; };
 		A6E5A1651C2754DD006CC86E /* SolidOctoGraphTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E5A1641C2754DD006CC86E /* SolidOctoGraphTests.swift */; };
 		A6E5A1701C2754DD006CC86E /* SolidOctoGraphUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E5A16F1C2754DD006CC86E /* SolidOctoGraphUITests.swift */; };
+		A6E5A17E1C27575E006CC86E /* OctoGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E5A17D1C27575E006CC86E /* OctoGraphView.swift */; };
+		A6E5A1801C276BDD006CC86E /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E5A17F1C276BDD006CC86E /* Cache.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,8 @@
 		A6E5A16B1C2754DD006CC86E /* SolidOctoGraphUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SolidOctoGraphUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6E5A16F1C2754DD006CC86E /* SolidOctoGraphUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolidOctoGraphUITests.swift; sourceTree = "<group>"; };
 		A6E5A1711C2754DD006CC86E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A6E5A17D1C27575E006CC86E /* OctoGraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OctoGraphView.swift; sourceTree = "<group>"; };
+		A6E5A17F1C276BDD006CC86E /* Cache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +104,8 @@
 				A6E5A1561C2754DD006CC86E /* Assets.xcassets */,
 				A6E5A1581C2754DD006CC86E /* Main.storyboard */,
 				A6E5A15B1C2754DD006CC86E /* Info.plist */,
+				A6E5A17D1C27575E006CC86E /* OctoGraphView.swift */,
+				A6E5A17F1C276BDD006CC86E /* Cache.swift */,
 			);
 			path = SolidOctoGraph;
 			sourceTree = "<group>";
@@ -252,7 +258,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6E5A17E1C27575E006CC86E /* OctoGraphView.swift in Sources */,
 				A6E5A1551C2754DD006CC86E /* ViewController.swift in Sources */,
+				A6E5A1801C276BDD006CC86E /* Cache.swift in Sources */,
 				A6E5A1531C2754DD006CC86E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

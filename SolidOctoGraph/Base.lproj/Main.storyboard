@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="6198" systemVersion="14A297b" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6198"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9531"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -641,12 +642,12 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="SolidOctoGraph" customModuleProvider="target"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="0.0"/>
         </scene>
-        <!--Window Controller - Window-->
+        <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
@@ -667,11 +668,52 @@
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="SolidOctoGraph" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Rhy-WX-eX1">
+                                <rect key="frame" x="20" y="228" width="363" height="22"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="localhost:19021" placeholderString="TCP endpoint to grab data from" drawsBackground="YES" id="IUl-HK-rDe">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="k1H-Cj-jdo">
+                                <rect key="frame" x="385" y="222" width="81" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="69" id="V05-W7-tsu"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="Connect" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="p0H-HE-icC">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="connectClick:" target="XfG-lQ-9wD" id="j5Y-hX-zQq"/>
+                                </connections>
+                            </button>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="EHl-kw-1EE" customClass="OctoGraphView" customModule="SolidOctoGraph" customModuleProvider="target">
+                                <rect key="frame" x="20" y="20" width="440" height="200"/>
+                            </customView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="Rhy-WX-eX1" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="1WJ-hj-ipK"/>
+                            <constraint firstItem="k1H-Cj-jdo" firstAttribute="leading" secondItem="Rhy-WX-eX1" secondAttribute="trailing" constant="8" symbolic="YES" id="3yU-Uv-4Tz"/>
+                            <constraint firstItem="k1H-Cj-jdo" firstAttribute="trailing" secondItem="EHl-kw-1EE" secondAttribute="trailing" id="HTj-e1-AGj"/>
+                            <constraint firstAttribute="bottom" secondItem="EHl-kw-1EE" secondAttribute="bottom" constant="20" id="Kwn-wb-yiR"/>
+                            <constraint firstAttribute="trailing" secondItem="EHl-kw-1EE" secondAttribute="trailing" constant="20" id="KxO-bL-Gez"/>
+                            <constraint firstItem="Rhy-WX-eX1" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="TG9-Xg-xss"/>
+                            <constraint firstItem="EHl-kw-1EE" firstAttribute="top" secondItem="Rhy-WX-eX1" secondAttribute="bottom" constant="8" id="Z7h-h1-PDF"/>
+                            <constraint firstItem="EHl-kw-1EE" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="jrb-1G-Axc"/>
+                            <constraint firstItem="k1H-Cj-jdo" firstAttribute="top" secondItem="Rhy-WX-eX1" secondAttribute="top" id="mkM-ZH-EVW"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="graphView" destination="EHl-kw-1EE" id="yoo-O0-lHh"/>
+                        <outlet property="textField" destination="Rhy-WX-eX1" id="CQo-PS-XKp"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
