@@ -15,6 +15,8 @@
 		A6E5A1701C2754DD006CC86E /* SolidOctoGraphUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E5A16F1C2754DD006CC86E /* SolidOctoGraphUITests.swift */; };
 		A6E5A17E1C27575E006CC86E /* OctoGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E5A17D1C27575E006CC86E /* OctoGraphView.swift */; };
 		A6E5A1801C276BDD006CC86E /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E5A17F1C276BDD006CC86E /* Cache.swift */; };
+		A6E5A1821C277F1A006CC86E /* TcpDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E5A1811C277F1A006CC86E /* TcpDataProvider.swift */; };
+		A6E5A1851C277F93006CC86E /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = A6E5A1841C277F93006CC86E /* GCDAsyncSocket.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,10 @@
 		A6E5A1711C2754DD006CC86E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A6E5A17D1C27575E006CC86E /* OctoGraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OctoGraphView.swift; sourceTree = "<group>"; };
 		A6E5A17F1C276BDD006CC86E /* Cache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
+		A6E5A1811C277F1A006CC86E /* TcpDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TcpDataProvider.swift; sourceTree = "<group>"; };
+		A6E5A1831C277F92006CC86E /* SolidOctoGraph-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SolidOctoGraph-Bridging-Header.h"; sourceTree = "<group>"; };
+		A6E5A1841C277F93006CC86E /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
+		A6E5A1861C277FBF006CC86E /* GCDAsyncSocket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +112,10 @@
 				A6E5A15B1C2754DD006CC86E /* Info.plist */,
 				A6E5A17D1C27575E006CC86E /* OctoGraphView.swift */,
 				A6E5A17F1C276BDD006CC86E /* Cache.swift */,
+				A6E5A1811C277F1A006CC86E /* TcpDataProvider.swift */,
+				A6E5A1841C277F93006CC86E /* GCDAsyncSocket.m */,
+				A6E5A1831C277F92006CC86E /* SolidOctoGraph-Bridging-Header.h */,
+				A6E5A1861C277FBF006CC86E /* GCDAsyncSocket.h */,
 			);
 			path = SolidOctoGraph;
 			sourceTree = "<group>";
@@ -258,10 +268,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6E5A1851C277F93006CC86E /* GCDAsyncSocket.m in Sources */,
 				A6E5A17E1C27575E006CC86E /* OctoGraphView.swift in Sources */,
 				A6E5A1551C2754DD006CC86E /* ViewController.swift in Sources */,
 				A6E5A1801C276BDD006CC86E /* Cache.swift in Sources */,
 				A6E5A1531C2754DD006CC86E /* AppDelegate.swift in Sources */,
+				A6E5A1821C277F1A006CC86E /* TcpDataProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,11 +404,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = SolidOctoGraph/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.samarkin.SolidOctoGraph;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SolidOctoGraph/SolidOctoGraph-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -404,11 +419,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = SolidOctoGraph/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.samarkin.SolidOctoGraph;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SolidOctoGraph/SolidOctoGraph-Bridging-Header.h";
 			};
 			name = Release;
 		};

@@ -14,6 +14,8 @@ class OctoGraphView: NSView {
         super.init(coder: coder)
     }
 
+    private var throttle = 0
+
     func push(arr: [Double]) {
         while cache.count < arr.count {
             cache.append(Cache<Double>(limit: 2048))
@@ -23,7 +25,10 @@ class OctoGraphView: NSView {
             max = Swift.max(max, d, 0)
             cache[i].push(d)
         }
-        self.setNeedsDisplayInRect(NSRect(origin: NSZeroPoint, size: frame.size))
+        if ++throttle > 0 {
+            self.setNeedsDisplayInRect(NSRect(origin: NSZeroPoint, size: frame.size))
+            throttle = 0
+        }
     }
 
     private func normalize(y: Double) -> Double {
@@ -37,6 +42,10 @@ class OctoGraphView: NSView {
         // erase the background by drawing white
         NSColor.whiteColor().set()
         NSBezierPath.fillRect(redrawRect)
+
+        if abs(min - max) < 1e-6 {
+            return
+        }
 
         let ny = normalize(0)
 

@@ -711,6 +711,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="connectButton" destination="k1H-Cj-jdo" id="HCl-Af-R52"/>
                         <outlet property="graphView" destination="EHl-kw-1EE" id="yoo-O0-lHh"/>
                         <outlet property="textField" destination="Rhy-WX-eX1" id="CQo-PS-XKp"/>
                     </connections>
