@@ -22,7 +22,7 @@ class ViewController: NSViewController {
 
     @IBAction func connectClick(sender: AnyObject) {
         connectButton.enabled = false
-        dataProvider = TcpTextDataProvider()
+        dataProvider = TcpBinaryDataProvider(types: [.Int16, .Int16, .Int16])
         let a = textField.stringValue.characters.split(":").map(String.init)
         dataProvider.connected = { [weak self] in
             self?.view.window!.title = "Graph"
