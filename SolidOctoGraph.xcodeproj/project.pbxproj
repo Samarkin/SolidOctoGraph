@@ -15,8 +15,9 @@
 		A6E5A1701C2754DD006CC86E /* SolidOctoGraphUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E5A16F1C2754DD006CC86E /* SolidOctoGraphUITests.swift */; };
 		A6E5A17E1C27575E006CC86E /* OctoGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E5A17D1C27575E006CC86E /* OctoGraphView.swift */; };
 		A6E5A1801C276BDD006CC86E /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E5A17F1C276BDD006CC86E /* Cache.swift */; };
-		A6E5A1821C277F1A006CC86E /* TcpDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E5A1811C277F1A006CC86E /* TcpDataProvider.swift */; };
+		A6E5A1821C277F1A006CC86E /* TcpTextDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E5A1811C277F1A006CC86E /* TcpTextDataProvider.swift */; };
 		A6E5A1851C277F93006CC86E /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = A6E5A1841C277F93006CC86E /* GCDAsyncSocket.m */; };
+		A6E5A1881C2A321E006CC86E /* TcpDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E5A1871C2A321E006CC86E /* TcpDataProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,10 +52,11 @@
 		A6E5A1711C2754DD006CC86E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A6E5A17D1C27575E006CC86E /* OctoGraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OctoGraphView.swift; sourceTree = "<group>"; };
 		A6E5A17F1C276BDD006CC86E /* Cache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
-		A6E5A1811C277F1A006CC86E /* TcpDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TcpDataProvider.swift; sourceTree = "<group>"; };
+		A6E5A1811C277F1A006CC86E /* TcpTextDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TcpTextDataProvider.swift; sourceTree = "<group>"; };
 		A6E5A1831C277F92006CC86E /* SolidOctoGraph-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SolidOctoGraph-Bridging-Header.h"; sourceTree = "<group>"; };
 		A6E5A1841C277F93006CC86E /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
 		A6E5A1861C277FBF006CC86E /* GCDAsyncSocket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
+		A6E5A1871C2A321E006CC86E /* TcpDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TcpDataProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,10 +114,11 @@
 				A6E5A15B1C2754DD006CC86E /* Info.plist */,
 				A6E5A17D1C27575E006CC86E /* OctoGraphView.swift */,
 				A6E5A17F1C276BDD006CC86E /* Cache.swift */,
-				A6E5A1811C277F1A006CC86E /* TcpDataProvider.swift */,
+				A6E5A1811C277F1A006CC86E /* TcpTextDataProvider.swift */,
 				A6E5A1841C277F93006CC86E /* GCDAsyncSocket.m */,
 				A6E5A1831C277F92006CC86E /* SolidOctoGraph-Bridging-Header.h */,
 				A6E5A1861C277FBF006CC86E /* GCDAsyncSocket.h */,
+				A6E5A1871C2A321E006CC86E /* TcpDataProvider.swift */,
 			);
 			path = SolidOctoGraph;
 			sourceTree = "<group>";
@@ -271,9 +274,10 @@
 				A6E5A1851C277F93006CC86E /* GCDAsyncSocket.m in Sources */,
 				A6E5A17E1C27575E006CC86E /* OctoGraphView.swift in Sources */,
 				A6E5A1551C2754DD006CC86E /* ViewController.swift in Sources */,
+				A6E5A1881C2A321E006CC86E /* TcpDataProvider.swift in Sources */,
 				A6E5A1801C276BDD006CC86E /* Cache.swift in Sources */,
 				A6E5A1531C2754DD006CC86E /* AppDelegate.swift in Sources */,
-				A6E5A1821C277F1A006CC86E /* TcpDataProvider.swift in Sources */,
+				A6E5A1821C277F1A006CC86E /* TcpTextDataProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,6 +504,7 @@
 				A6E5A1761C2754DD006CC86E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A6E5A1771C2754DD006CC86E /* Build configuration list for PBXNativeTarget "SolidOctoGraphTests" */ = {
 			isa = XCConfigurationList;
@@ -508,6 +513,7 @@
 				A6E5A1791C2754DD006CC86E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A6E5A17A1C2754DD006CC86E /* Build configuration list for PBXNativeTarget "SolidOctoGraphUITests" */ = {
 			isa = XCConfigurationList;
@@ -516,6 +522,7 @@
 				A6E5A17C1C2754DD006CC86E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

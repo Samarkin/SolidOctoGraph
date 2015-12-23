@@ -22,23 +22,12 @@ class ViewController: NSViewController {
 
     @IBAction func connectClick(sender: AnyObject) {
         connectButton.enabled = false
-        dataProvider = TcpDataProvider()
+        dataProvider = TcpTextDataProvider()
         let a = textField.stringValue.characters.split(":").map(String.init)
-        dataProvider.connected = {
-            self.view.window!.title = "Graph"
+        dataProvider.connected = { [weak self] in
+            self?.view.window!.title = "Graph"
         }
-        dataProvider.delegate = { (s: String) in
-            var z = [Double]()
-            for x in s.characters.dropLast(2).split(" ", maxSplit: 3, allowEmptySlices: false) {
-                if let d = Double(String(x)) {
-                    z.append(d)
-                }
-                else {
-                    return
-                }
-            }
-            self.graphView.push(z)
-        }
+        dataProvider.delegate = { [weak self] in self?.graphView.push($0) }
         dataProvider.connect(a[0], port: Int(a[1])!)
         self.view.window!.title = "Connecting to \(a)..."
     }
