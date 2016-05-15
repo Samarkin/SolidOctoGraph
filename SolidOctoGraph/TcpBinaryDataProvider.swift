@@ -9,8 +9,17 @@ enum DataType {
 
 class DataDescription {
     let types: [DataType]
+    let length: UInt
     init(types: [DataType]) {
         self.types = types
+        self.length = types.map {
+            switch $0 {
+            case .Int8, .UInt8:
+                return 1
+            case .Int16, .UInt16:
+                return 2
+            }
+        }.reduce(0, combine: +)
     }
     func extractArrayFromData(data: NSData) -> [Double] {
         var cur = 0
@@ -58,7 +67,7 @@ class TcpBinaryDataProvider: NSObject, TcpDataProvider {
 
     func connect(host: String, port: Int) {
         try! socket.connectToHost(host, onPort: UInt16(port))
-        socket.readDataToLength(6, withTimeout: -1, tag: 1)
+        socket.readDataToLength(dataDescription.length, withTimeout: -1, tag: 1)
     }
 
     func socket(sender: GCDAsyncSocket, didConnectToHost host: NSString, port: UInt16) {
@@ -67,6 +76,6 @@ class TcpBinaryDataProvider: NSObject, TcpDataProvider {
 
     func socket(sender: GCDAsyncSocket, didReadData data: NSData, withTag tag:Int) {
         self.delegate?(dataDescription.extractArrayFromData(data))
-        socket.readDataToLength(6, withTimeout: -1, tag: 1)
+        socket.readDataToLength(dataDescription.length, withTimeout: -1, tag: 1)
     }
 }

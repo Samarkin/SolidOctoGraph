@@ -5,6 +5,7 @@ class OctoGraphView: NSView {
         .blackColor(),
         .redColor(),
         .blueColor(),
+        .greenColor(),
     ]
     private var min: Double = 0
     private var max: Double = 0
@@ -16,14 +17,17 @@ class OctoGraphView: NSView {
 
     private var throttle = 0
 
+    private var cnt = 0
     func push(arr: [Double]) {
         while cache.count < arr.count {
             cache.append(Cache<Double>(limit: 2048))
         }
         for (i,d) in arr.enumerate() {
-            min = Swift.min(min, d, 0)
-            max = Swift.max(max, d, 0)
-            cache[i].push(d)
+            if (++cnt) > 100 {
+                min = Swift.min(min, d, 0)
+                max = Swift.max(max, d, 0)
+                cache[i].push(d)
+            }
         }
         if ++throttle > 0 {
             self.setNeedsDisplayInRect(NSRect(origin: NSZeroPoint, size: frame.size))
@@ -36,7 +40,7 @@ class OctoGraphView: NSView {
     }
 
     override func drawRect(dirtyRect: NSRect) {
-        assert(cache.count <= colors.count)
+        assert(cache.count <= colors.count, "Please add more colors")
 
         let redrawRect = NSRect(origin: NSZeroPoint, size: frame.size)
         // erase the background by drawing white
